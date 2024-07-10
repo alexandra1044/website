@@ -10,8 +10,8 @@ theme = "hugo-texify3"
 title = "Sacha's blog"
 
 [author]
-name = "Michael Neuper"
-email = "michael@michaelneuper.com"
+name = "Alexandra Cooper"
+email = ""
 
 [taxonomies]
 tags = "tags"
@@ -20,7 +20,7 @@ categories = "categories"
 [languages]
   [languages.en]
     contentDir = "content"
-    title = "My New Hugo i18n Site"
+    title = "Sacha's Website"
     languageName = "English"
     weight = 1
 
