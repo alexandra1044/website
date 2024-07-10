@@ -7,7 +7,7 @@ languageCode = "en"
 paginate = 5
 rssLimit = 10
 theme = "hugo-texify3"
-title = "TeXify3"
+title = "Sacha's blog"
 
 [author]
 name = "Michael Neuper"
@@ -17,9 +17,16 @@ email = "michael@michaelneuper.com"
 tags = "tags"
 categories = "categories"
 
+[languages]
+  [languages.en]
+    contentDir = "content"
+    title = "My New Hugo i18n Site"
+    languageName = "English"
+    weight = 1
+
 [params]
-title="TeXify3"
-description = "TeXify3 - A LaTeX-style hugo theme with the gruvbox color scheme for personal blogging"
+title="Alexandra Cooper"
+description="Welcome to my personal website and blog"
 footnote = """
 Powered by  <a class=link href=https://gohugo.io target=_blank rel=noopener>Hugo</a> | 
 Theme <a class=link href=https://github.com/michaelneuper/hugo-texify3 target=_blank rel=noopener>TeXify3</a>
@@ -51,22 +58,6 @@ numberedSubtitles = true
         data-loading="lazy"
         crossorigin="anonymous"
         async>
-  </script>
-  """
-
-  [params.buymeacoffee]
-  code = """
-  <script async data-name="BMC-Widget" 
-        data-cfasync="true" 
-        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
-        data-id="michaelneuper" 
-        data-description="Like what I do? Buy me a coffee!" 
-        data-message="" 
-        data-color="#d79921" 
-        data-position="Right" 
-        data-x_margin="18" 
-        data-y_margin="18"
-        crossorigin="anonymous">
   </script>
   """
 
