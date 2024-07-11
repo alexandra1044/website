@@ -1,3 +1,9 @@
 [module]
   [module.hugoVersion]
     min = "0.115.1"
+
+name: Install dependencies
+        run: |
+          npm install postcss -D
+          npm install -g postcss-cli
+          npm install -g autoprefixer
