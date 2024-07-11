@@ -4,30 +4,8 @@
     <title>Tags on Sacha&#39;s Website</title>
     <link>http://localhost:1313/hugo-texify3/tags/</link>
     <description>Recent content in Tags on Sacha&#39;s Website</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/hugo-texify3/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Haskell</title>
-      <link>http://localhost:1313/hugo-texify3/tags/haskell/</link>
-      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hugo-texify3/tags/haskell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LaTex</title>
-      <link>http://localhost:1313/hugo-texify3/tags/latex/</link>
-      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hugo-texify3/tags/latex/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Typesetting</title>
-      <link>http://localhost:1313/hugo-texify3/tags/typesetting/</link>
-      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hugo-texify3/tags/typesetting/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/hugo-texify3/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -4,8 +4,7 @@
     <title>Categories on Sacha&#39;s Website</title>
     <link>http://localhost:1313/hugo-texify3/categories/</link>
     <description>Recent content in Categories on Sacha&#39;s Website</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <atom:link href="http://localhost:1313/hugo-texify3/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="http://localhost:1313/hugo-texify3/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
