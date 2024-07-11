@@ -7,7 +7,7 @@ Hello and welcome to my website.
 
 - I am a UK based software engineer and third year undergraduate student.
 - My research interests include neuroevolution, neuromorphic robotics and functional programming.
-- I also have a passion for LaTeX (if you couldn't tell!).
+- I also have a passion for $\LaTeX$ (if you couldn't tell!).
 
 
 ---
