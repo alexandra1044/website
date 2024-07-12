@@ -70,18 +70,18 @@
   <meta itemprop="description" content="Guide to basic use of LaTeX for Computer Science papers">
   <meta itemprop="datePublished" content="2024-07-10T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-07-11T17:40:57+01:00">
-  <meta itemprop="wordCount" content="150">
+  <meta itemprop="wordCount" content="234">
   <meta itemprop="keywords" content="LaTeX,Typesetting">
 
   
   
   
-    <link rel="stylesheet" href="/hugo-texify3/css/common.min.d8d2bd9dccfa1dbf435cab0d406fadf2d3fbc1076efcbff3d08be718a0d4d649.css" integrity="sha256-2NK9ncz6Hb9DXKsNQG&#43;t8tP7wQdu/L/z0IvnGKDU1kk=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/hugo-texify3/css/common.min.7a98a087f74f01bf41b87ab0b3c00bb17b75041104e5715ecc1dfc265bfb67f8.css" integrity="sha256-epigh/dPAb9BuHqws8ALsXt1BBEE5XFezB38Jlv7Z/g=" crossorigin="anonymous">
   
 
   
   
-    <link rel="stylesheet" href="/hugo-texify3/css/content.min.6e2273a907f8e5036bf3f355e38039f5f3ca54ed5ff18de5f086ff4551d6acff.css" integrity="sha256-biJzqQf45QNr8/NV44A59fPKVO1f8Y3l8Ib/RVHWrP8=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/hugo-texify3/css/content.min.6c31da0bc5cc69c77403102e89ea9c9e31a3ccf09623e18eb68755129b9c4de9.css" integrity="sha256-bDHaC8XMacd0AxAuieqcnjGjzPCWI&#43;GOtodVEpucTek=" crossorigin="anonymous">
   
 
   
@@ -99,7 +99,7 @@
   
 
 
-  <link rel="stylesheet" href="/hugo-texify3/css/single.min.bb66707339a464342c17d9a2fcfed1ba696f9232c32a1afa902e8f55b39910bb.css" integrity="sha256-u2ZwczmkZDQsF9mi/P7RumlvkjLDKhr6kC6PVbOZELs=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/hugo-texify3/css/single.min.f35aeaeb97812293ce759aecc7193909bd5d84930f3bdf5d744421a841610f9e.css" integrity="sha256-81rq65eBIpPOdZrsxxk5Cb1dhJMPO99ddEQhqEFhD54=" crossorigin="anonymous">
 
 
   <link rel="stylesheet" href="/hugo-texify3/css/single.min.78a121b7d7a160420f9daab0ea13add66c37b9c44f27bba07b27207e2b0975d2.css" integrity="sha256-eKEht9ehYEIPnaqw6hOt1mw3ucRPJ7ugeycgfisJddI=" crossorigin="anonymous">
@@ -172,7 +172,7 @@
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          150 words
+          234 words
         </span>
       
       
@@ -185,7 +185,7 @@
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          ~1 min
+          ~2 mins
         </span>
       
     </div>
@@ -210,7 +210,7 @@
     <div class="toc numbered-subtitles"><nav id="TableOfContents">
   <ul>
     <li><a href="#float-package">Float Package</a></li>
-    <li><a href="#two-figures-in-parallel">Two Figures in Parallel</a></li>
+    <li><a href="#two-figures-or-more-in-parallel">Two Figures (or More!) in Parallel</a></li>
   </ul>
 </nav></div>
   </details>
@@ -229,15 +229,50 @@
 <p><code>\usepackage{float}</code></p>
 <p>Then&hellip;</p>
 <p><code>\begin{figure}[H]</code></p>
-<p><code>\centering</code></p>
-<p><code>\includegraphics[width=1\linewidth]{path/to/image}</code></p>
-<p><code>\caption{Image Caption}</code></p>
+<p> <code>\centering</code></p>
+<p>   <code>\includegraphics[width=1\linewidth]{path/to/image}</code></p>
+<p> <code>\caption{Image Caption}</code></p>
 <p><code>\end{figure}</code></p>
-<h2 id="two-figures-in-parallel">Two Figures in Parallel</h2>
+<p> </p>
+<h2 id="two-figures-or-more-in-parallel">Two Figures (or More!) in Parallel</h2>
+<p><code>\begin{figure}</code></p>
+<p> <code>\centering</code></p>
+<p>  <code>\begin{subfigure}[b]{0.3\textwidth}</code></p>
+<p>   <code>\includegraphics[scale=0.2]{image}</code></p>
+<p>   <code>\caption{Text A}</code></p>
+<p>   <code>\label{fig:desc}</code></p>
+<p>  <code>\end{subfigure} %</code></p>
+<p>  <code>\begin{subfigure}[b]{0.3\textwidth}</code></p>
+<p>   <code>\includegraphics[scale=0.2]{image}</code></p>
+<p>   <code>\caption{Text B}</code></p>
+<p>   <code>\label{fig:desc}</code></p>
+<p>  <code> \end{subfigure} %</code></p>
+<p> <code>\\</code></p>
+<p>  <code>\begin{subfigure}[b]{0.3\textwidth}</code></p>
+<p>   <code>\includegraphics[scale=0.2]{image}</code></p>
+<p>   <code>\caption{Text C}</code></p>
+<p>   <code>\label{fig:desc}</code></p>
+<p>  <code>\end{subfigure} %</code></p>
+<p>  <code>\begin{subfigure}[b]{0.3\textwidth}</code></p>
+<p>   <code>\includegraphics[scale=0.2]{image}</code></p>
+<p>   <code>\caption{Text D}</code></p>
+<p>   <code>\label{fig:desc}</code></p>
+<p>  <code>\end{subfigure} %</code></p>
+<p><code>\end{figure}</code></p>
 <h1 id="tables">Tables</h1>
 <p>Tables in LaTeX can be tricky.</p>
+<p>You can use the tabular package.</p>
+<p><code>\begin{center}</code></p>
+<p><code>\begin{tabular}{|l | l | l | l | l |}</code></p>
+<p><code>\hline</code></p>
+<p><code>one &amp; two &amp; three &amp; four &amp; five \\</code></p>
+<p><code>\hline</code></p>
+<p><code>\end{center}</code></p>
+<p>This will create a centered table with five cells. Duplicate the <code>hline</code> for more rows.</p>
 <h1 id="bibtex">Bibtex</h1>
-<p>This is your best bet for writing a good bibliography.</p>
+<p>This is your best friend for writing a good bibliography.</p>
+<p>This guide is excellent:</p>
+<p><a href="https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex">https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex</a></p>
 <h1 id="codeblocks">Codeblocks</h1>
 <p>You can use the lstlistings package to add code snippets to your paper. Add this to your preamble:</p>
 <p><code>\usepackage{listings}</code></p>

@@ -26,23 +26,93 @@ Then...
 
 `\begin{figure}[H]`   
 
-`\centering`   
+&nbsp;`\centering`   
 
-`\includegraphics[width=1\linewidth]{path/to/image}` 
+&nbsp; &nbsp;`\includegraphics[width=1\linewidth]{path/to/image}` 
 
-`\caption{Image Caption}` 
+&nbsp;`\caption{Image Caption}` 
+
+`\end{figure}` 
+
+&nbsp;
+
+## Two Figures (or More!) in Parallel
+
+`\begin{figure}` 
+
+&nbsp;`\centering` 
+
+&nbsp;&nbsp;`\begin{subfigure}[b]{0.3\textwidth}` 
+
+&nbsp;&nbsp;&nbsp;`\includegraphics[scale=0.2]{image}` 
+
+&nbsp;&nbsp;&nbsp;`\caption{Text A}` 
+
+&nbsp;&nbsp;&nbsp;`\label{fig:desc}` 
+
+&nbsp;&nbsp;`\end{subfigure} %` 
+
+&nbsp;&nbsp;`\begin{subfigure}[b]{0.3\textwidth}` 
+
+&nbsp;&nbsp;&nbsp;`\includegraphics[scale=0.2]{image}` 
+
+&nbsp;&nbsp;&nbsp;`\caption{Text B}` 
+
+&nbsp;&nbsp;&nbsp;`\label{fig:desc}` 
+
+&nbsp;&nbsp;` \end{subfigure} %` 
+
+&nbsp;`\\` 
+
+&nbsp;&nbsp;`\begin{subfigure}[b]{0.3\textwidth}` 
+
+&nbsp;&nbsp;&nbsp;`\includegraphics[scale=0.2]{image}` 
+
+&nbsp;&nbsp;&nbsp;`\caption{Text C}` 
+
+&nbsp;&nbsp;&nbsp;`\label{fig:desc}` 
+
+&nbsp;&nbsp;`\end{subfigure} %` 
+
+&nbsp;&nbsp;`\begin{subfigure}[b]{0.3\textwidth}` 
+
+&nbsp;&nbsp;&nbsp;`\includegraphics[scale=0.2]{image}` 
+
+&nbsp;&nbsp;&nbsp;`\caption{Text D}` 
+
+&nbsp;&nbsp;&nbsp;`\label{fig:desc}` 
+
+&nbsp;&nbsp;`\end{subfigure} %` 
 
 `\end{figure}` 
 
 
-## Two Figures in Parallel
-
-
 # Tables
-Tables in LaTeX can be tricky.
+Tables in LaTeX can be tricky. 
+
+You can use the tabular package.
+
+`\begin{center}`
+
+`\begin{tabular}{|l | l | l | l | l |}`
+
+`\hline`
+
+`one & two & three & four & five \\`
+
+`\hline`
+
+`\end{center}`
+
+This will create a centered table with five cells. Duplicate the `hline` for more rows.
 
 # Bibtex
-This is your best bet for writing a good bibliography.
+This is your best friend for writing a good bibliography.
+
+This guide is excellent:
+
+https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex
+
 
 # Codeblocks
 You can use the lstlistings package to add code snippets to your paper. Add this to your preamble:
