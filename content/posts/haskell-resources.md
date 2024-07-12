@@ -8,3 +8,8 @@ tags: [
     "Haskell"
 ]
 ---
+
+# Introductory Materials
+
+1. https://andrew.gibiansky.com/blog/haskell/haskell-syntax/
+2. https://riptutorial.com/haskell
