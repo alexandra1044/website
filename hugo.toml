@@ -70,3 +70,7 @@ numberedSubtitles = true
   whatsapp = true
   hackernews = true
   telegram = true
+
+[mediaTypes]
+  [mediaTypes."image/svg+xml"]
+    suffixes = ["svg"]

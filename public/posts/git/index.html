@@ -55,7 +55,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-08-25T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-08-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-25T19:44:55+01:00">
     <meta property="article:tag" content="Git">
     <meta property="article:tag" content="Version Control">
 
@@ -69,8 +69,8 @@
   <meta itemprop="name" content="Git">
   <meta itemprop="description" content="A basic explaination of version control and some useful commands (so I can find them easily!)">
   <meta itemprop="datePublished" content="2024-08-25T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-08-25T00:00:00+00:00">
-  <meta itemprop="wordCount" content="521">
+  <meta itemprop="dateModified" content="2024-08-25T19:44:55+01:00">
+  <meta itemprop="wordCount" content="539">
   <meta itemprop="keywords" content="Git,Version Control">
 
   
@@ -172,7 +172,7 @@
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          521 words
+          539 words
         </span>
       
       
@@ -227,7 +227,19 @@
     <h1 id="basic-explaination">Basic Explaination</h1>
 <p>Git is version control software which lets you easily save and undo specific changes to your work. All successful software projects use version control of some kind.</p>
 <p>Github or Codeberg are git hosting services that can store your source code. Multiple people can contribute to the same project. You can also use Github actions to run scripts when code is submitted (pushed, see below).</p>
-<p><img alt="Git Diagram showing the individual nodes" src="/static/images/git.svg"></p>
+<div class="mermaid">gitGraph
+    commit
+    commit
+    branch develop
+    checkout develop
+    commit
+    commit
+    checkout main
+    merge develop
+    commit
+    commit
+</div>
+
 <p>You can think of git history like a chain, with each node on the chain being its own commit (with an individual commit hash for the purposes of identification).</p>
 <p>You can branch off each node into a new branch with the original node as the base for a new branch.</p>
 <p>You can make a pull request to merge your code changes into the chain which adds a new node with a new commit hash.</p>
@@ -280,6 +292,7 @@
 <h2 id="forking">Forking</h2>
 <p>A fork is a copy of someone else&rsquo;s repository that belongs to you that you can freely modify and make your own without being related to their original project. There is a dropdown menu.</p>
 <p><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo">https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo</a></p>
+<p>Diagram Credit: <a href="https://www.mermaidchart.com/">https://www.mermaidchart.com/</a></p>
 
     
   </article>
@@ -401,6 +414,11 @@
   </div>
   
   
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
 </main>
 
     <footer id="footer">

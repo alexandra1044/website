@@ -15,7 +15,19 @@ Git is version control software which lets you easily save and undo specific cha
 
 Github or Codeberg are git hosting services that can store your source code. Multiple people can contribute to the same project. You can also use Github actions to run scripts when code is submitted (pushed, see below).
 
-![Git Diagram showing the individual nodes](/static/images/git.svg)
+```mermaid
+gitGraph
+    commit
+    commit
+    branch develop
+    checkout develop
+    commit
+    commit
+    checkout main
+    merge develop
+    commit
+    commit
+```
 
 You can think of git history like a chain, with each node on the chain being its own commit (with an individual commit hash for the purposes of identification).
 
@@ -137,3 +149,6 @@ Github actions is an excellent feature you can take advantage of for free. It's 
 A fork is a copy of someone else's repository that belongs to you that you can freely modify and make your own without being related to their original project. There is a dropdown menu.
 
 https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
+
+
+Diagram Credit: https://www.mermaidchart.com/

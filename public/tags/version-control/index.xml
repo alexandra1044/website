@@ -14,11 +14,61 @@
       
       <guid>http://localhost:1313/hugo-texify3/posts/git/</guid>
       <description>&lt;h1 id=&#34;basic-explaination&#34;&gt;Basic Explaination&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://andrew.gibiansky.com/blog/haskell/haskell-syntax/&#34;&gt;https://andrew.gibiansky.com/blog/haskell/haskell-syntax/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://riptutorial.com/haskell&#34;&gt;https://riptutorial.com/haskell&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Git is version control software which lets you easily save and undo specific changes to your work. All successful software projects use version control of some kind.&lt;/p&gt;
+&lt;p&gt;Github or Codeberg are git hosting services that can store your source code. Multiple people can contribute to the same project. You can also use Github actions to run scripts when code is submitted (pushed, see below).&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Git Diagram showing the individual nodes&#34; src=&#34;http://localhost:1313/hugo-texify3/static/images/git.svg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You can think of git history like a chain, with each node on the chain being its own commit (with an individual commit hash for the purposes of identification).&lt;/p&gt;
+&lt;p&gt;You can branch off each node into a new branch with the original node as the base for a new branch.&lt;/p&gt;
+&lt;p&gt;You can make a pull request to merge your code changes into the chain which adds a new node with a new commit hash.&lt;/p&gt;
 &lt;h1 id=&#34;useful-commands&#34;&gt;Useful Commands&lt;/h1&gt;
+&lt;h2 id=&#34;gitignore&#34;&gt;Gitignore&lt;/h2&gt;
+&lt;p&gt;A gitignore lists files that git should, well, ignore. When adding and pushing these files will not be included.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;touch .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;making-a-commit-and-pushing&#34;&gt;Making a Commit and Pushing&lt;/h2&gt;
+&lt;p&gt;A commit contains a &amp;lsquo;diff&amp;rsquo; of your changes, i.e the difference between the most recent commit and your change.&lt;/p&gt;
+&lt;p&gt;First you need to stage your changes. You can see them with the status command.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To stage everything:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git add .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To be more specific&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git add &amp;lt;filename&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then we want to make a commit and give it a small description:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git commit -m &amp;#34;some amazing text here&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then we want to push to the upstream branch if we&amp;rsquo;re happy:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git push
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After this, we might want to make a pull request and ask people to check our code in a review before we merge this to master/main.&lt;/p&gt;
+&lt;h2 id=&#34;undoing-mistakes&#34;&gt;Undoing Mistakes&lt;/h2&gt;
+&lt;p&gt;Primarily, this is done with the reset command. The reset command moves HEAD which you can think of as the most recent node in the chain.&lt;/p&gt;
+&lt;p&gt;To see the log and thus the commit hashes:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git log
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Undo and discard all changes:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset --hard &amp;lt;commit hash&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Undo without discarding:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset &amp;lt;commit hash&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;branches&#34;&gt;Branches&lt;/h2&gt;
+&lt;p&gt;To make a new branch:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout -b &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To switch to the branch you just made:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git switch &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Sometimes when you make a branch, you&amp;rsquo;ll want to specify which upstream it should point to so that your changes go there. To do this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout -b &amp;lt;branch name&amp;gt; origin/example_upstream
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;patching&#34;&gt;Patching&lt;/h2&gt;
+&lt;p&gt;Sometimes you want to make a patch file containing all your changes for a given branch to be applied somewhere else. To do this as a single file:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git format-patch project/branch --stdout &amp;gt; example.patch
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then apply the patch:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git am example.patch
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;remote-branches&#34;&gt;Remote Branches&lt;/h2&gt;
+&lt;p&gt;To grab all new changes from the upstream:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git fetch
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;github-actions&#34;&gt;Github Actions&lt;/h2&gt;
+&lt;p&gt;Github actions is an excellent feature you can take advantage of for free. It&amp;rsquo;s especially good for ensuring committed code is quality, as you can automatically run a variety of tests.&lt;/p&gt;
+&lt;h2 id=&#34;forking&#34;&gt;Forking&lt;/h2&gt;
+&lt;p&gt;A fork is a copy of someone else&amp;rsquo;s repository that belongs to you that you can freely modify and make your own without being related to their original project. There is a dropdown menu.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo&#34;&gt;https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
