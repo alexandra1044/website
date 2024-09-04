@@ -2,34 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/hugo-texify3/tags/git/</loc>
-    <lastmod>2024-08-25T19:44:55+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/hugo-texify3/posts/git/</loc>
-    <lastmod>2024-08-25T19:44:55+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/hugo-texify3/posts/</loc>
-    <lastmod>2024-08-25T19:44:55+01:00</lastmod>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-texify3/tags/</loc>
-    <lastmod>2024-08-25T19:44:55+01:00</lastmod>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-texify3/tags/university/</loc>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-texify3/posts/placement/</loc>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-texify3/tags/git/</loc>
+    <lastmod>2024-08-25T21:01:34+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-texify3/posts/git/</loc>
+    <lastmod>2024-08-25T21:01:34+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-texify3/tags/version-control/</loc>
-    <lastmod>2024-08-25T19:44:55+01:00</lastmod>
+    <lastmod>2024-08-25T21:01:34+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/hugo-texify3/tags/haskell/</loc>
-    <lastmod>2024-07-12T22:10:00+01:00</lastmod>
+    <loc>http://localhost:1313/hugo-texify3/tags/typesetting/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/hugo-texify3/posts/haskell-resources/</loc>
-    <lastmod>2024-07-12T22:10:00+01:00</lastmod>
+    <loc>http://localhost:1313/hugo-texify3/tags/typst/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-texify3/posts/why-typst/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-texify3/tags/latex/</loc>
     <lastmod>2024-07-12T22:56:45+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-texify3/posts/latex-hacks/</loc>
-    <lastmod>2024-07-12T22:56:45+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/hugo-texify3/tags/typesetting/</loc>
     <lastmod>2024-07-12T22:56:45+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-texify3/</loc>

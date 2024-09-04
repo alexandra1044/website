@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typst on Sacha&#39;s Website</title>
+    <link>http://localhost:1313/hugo-texify3/tags/typst/</link>
+    <description>Recent content in Typst on Sacha&#39;s Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/hugo-texify3/tags/typst/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>You should give Typst a Try!</title>
+      <link>http://localhost:1313/hugo-texify3/posts/why-typst/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/hugo-texify3/posts/why-typst/</guid>
+      <description>&lt;h1 id=&#34;what&#34;&gt;What?&lt;/h1&gt;
+&lt;p&gt;Typst is designed as a competitor in the typesetting space to LaTeX, albeit designed to be a lot easier to use.&lt;/p&gt;
+&lt;h1 id=&#34;why&#34;&gt;Why?&lt;/h1&gt;
+&lt;p&gt;Typst is designed to be as user-friendly as possible whilst still being able to generate beautiful documents. You can make a document identical to how you would in LaTeX in a shorter space of time. Typst also has much more comprehensible error messages for debugging your own code without resorting to StackOverflow.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re still hanging on to Microsoft Word because LaTeX seems too complicated, Typst is for you!&lt;/p&gt;
+&lt;h1 id=&#34;where&#34;&gt;Where?&lt;/h1&gt;
+&lt;p&gt;Go to &lt;a href=&#34;https://typst.app/&#34;&gt;https://typst.app/&lt;/a&gt; to make a free account.&lt;/p&gt;
+&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+&lt;p&gt;There are a selection of great materials to make using Typst easy. Below are the ones I use:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Easy beginner&amp;rsquo;s tutorial - &lt;a href=&#34;https://typst.app/docs/tutorial/&#34;&gt;https://typst.app/docs/tutorial/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Great book of examples - &lt;a href=&#34;https://sitandr.github.io/typst-examples-book/book/about.html&#34;&gt;https://sitandr.github.io/typst-examples-book/book/about.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,6 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="http://localhost:1313/hugo-texify3/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Why you Should do an Industrial Placement</title>
+      <link>http://localhost:1313/hugo-texify3/posts/placement/</link>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/hugo-texify3/posts/placement/</guid>
+      <description>&lt;h1 id=&#34;why&#34;&gt;Why?&lt;/h1&gt;
+&lt;h2 id=&#34;future-employment&#34;&gt;Future Employment&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Having a year&amp;rsquo;s worth of experience in a relevant field sets you apart from lots of other graduates competing for those crucial entry level roles.&lt;/li&gt;
+&lt;li&gt;If your placement employer liked you, they may offer you part time employment in your third year at university and/or a graduate role.&lt;/li&gt;
+&lt;li&gt;Working in industry also lets you begin to develop contacts with more senior engineers. There&amp;rsquo;s always a chance this will net you a job sometime in the future.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;academic-benefits&#34;&gt;Academic Benefits&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A year working with experts will likely improve your technical capacity and therefore final overall degree grades.&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ve also had to manage your time in a much more rigourous fashion than other students which makes keeping assignment deadlines and attending the dreaded 9am lecture much easier.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;tips-for-applying&#34;&gt;Tips for Applying&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Be persistent - you will probably get a lot of rejections and it can be a little demoralizing, but if you keep at it you will most likely find something.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t just apply for big companies - they often have much more rigiorous application processes which get a lot more applicants you&amp;rsquo;ll  be competing against. Plus, at smaller companies you often get a wider variety of duties and more freedom within the role.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t lie on your CV - if you get an interview it isn&amp;rsquo;t a good look if you can&amp;rsquo;t answer a question about something in which you&amp;rsquo;ve claimed to be an expert.&lt;/li&gt;
+&lt;li&gt;Be yourself - companies want to see the real you in an interview scenario, they&amp;rsquo;ll likely notice if you&amp;rsquo;re holding back. They&amp;rsquo;ll like someone who&amp;rsquo;s easy to talk to.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t worry too much - interviewers expect you to be a bit nervous, especially if this is your first big job.&lt;/li&gt;
+&lt;li&gt;Use an app like Trello to keep track of your applications.&lt;/li&gt;
+&lt;li&gt;Be sure to have your CV reviewed by your department and any industry contacts you may already have.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Git</title>
       <link>http://localhost:1313/hugo-texify3/posts/git/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
@@ -85,15 +116,23 @@
     </item>
     
     <item>
-      <title>Haskell Resources</title>
-      <link>http://localhost:1313/hugo-texify3/posts/haskell-resources/</link>
-      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <title>You should give Typst a Try!</title>
+      <link>http://localhost:1313/hugo-texify3/posts/why-typst/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/hugo-texify3/posts/haskell-resources/</guid>
-      <description>&lt;h1 id=&#34;introductory-materials&#34;&gt;Introductory Materials&lt;/h1&gt;
+      <guid>http://localhost:1313/hugo-texify3/posts/why-typst/</guid>
+      <description>&lt;h1 id=&#34;what&#34;&gt;What?&lt;/h1&gt;
+&lt;p&gt;Typst is designed as a competitor in the typesetting space to LaTeX, albeit designed to be a lot easier to use.&lt;/p&gt;
+&lt;h1 id=&#34;why&#34;&gt;Why?&lt;/h1&gt;
+&lt;p&gt;Typst is designed to be as user-friendly as possible whilst still being able to generate beautiful documents. You can make a document identical to how you would in LaTeX in a shorter space of time. Typst also has much more comprehensible error messages for debugging your own code without resorting to StackOverflow.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re still hanging on to Microsoft Word because LaTeX seems too complicated, Typst is for you!&lt;/p&gt;
+&lt;h1 id=&#34;where&#34;&gt;Where?&lt;/h1&gt;
+&lt;p&gt;Go to &lt;a href=&#34;https://typst.app/&#34;&gt;https://typst.app/&lt;/a&gt; to make a free account.&lt;/p&gt;
+&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+&lt;p&gt;There are a selection of great materials to make using Typst easy. Below are the ones I use:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://andrew.gibiansky.com/blog/haskell/haskell-syntax/&#34;&gt;https://andrew.gibiansky.com/blog/haskell/haskell-syntax/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://riptutorial.com/haskell&#34;&gt;https://riptutorial.com/haskell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Easy beginner&amp;rsquo;s tutorial - &lt;a href=&#34;https://typst.app/docs/tutorial/&#34;&gt;https://typst.app/docs/tutorial/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Great book of examples - &lt;a href=&#34;https://sitandr.github.io/typst-examples-book/book/about.html&#34;&gt;https://sitandr.github.io/typst-examples-book/book/about.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
