@@ -51,6 +51,11 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After this, we might want to make a pull request and ask people to check our code in a review before we merge this to master/main.&lt;/p&gt;
+&lt;p&gt;When it comes to a commit itself, try to group relevant code together into one commit rather than squishing all your changes into one giant commit. That way, its easier to understand your history and revert more specific changes should there be any problems.&lt;/p&gt;
+&lt;p&gt;You can be really specific about what you&amp;rsquo;re staging with:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git add -p &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will show you the code and ask if you want to stage the hunk or not.&lt;/p&gt;
+&lt;p&gt;Finally, commit messages should clearly state what has been changed.&lt;/p&gt;
 &lt;h2 id=&#34;undoing-mistakes&#34;&gt;Undoing Mistakes&lt;/h2&gt;
 &lt;p&gt;Primarily, this is done with the reset command. The reset command moves HEAD which you can think of as the most recent node in the chain.&lt;/p&gt;
 &lt;p&gt;To see the log and thus the commit hashes:&lt;/p&gt;
@@ -81,6 +86,7 @@
 &lt;h2 id=&#34;forking&#34;&gt;Forking&lt;/h2&gt;
 &lt;p&gt;A fork is a copy of someone else&amp;rsquo;s repository that belongs to you that you can freely modify and make your own without being related to their original project. There is a dropdown menu.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo&#34;&gt;https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;merging-and-rebasing&#34;&gt;Merging and Rebasing&lt;/h2&gt;
 &lt;p&gt;Diagram Credit: &lt;a href=&#34;https://www.mermaidchart.com/&#34;&gt;https://www.mermaidchart.com/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>

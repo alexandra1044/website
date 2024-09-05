@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="http://localhost:1313/hugo-texify3/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Github Actions</title>
+      <link>http://localhost:1313/hugo-texify3/posts/github-actions/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/hugo-texify3/posts/github-actions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Why you Should do an Industrial Placement</title>
       <link>http://localhost:1313/hugo-texify3/posts/placement/</link>
       <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
@@ -61,7 +70,7 @@
 
 &lt;p&gt;You can think of git history like a chain, with each node on the chain being its own commit (with an individual commit hash for the purposes of identification).&lt;/p&gt;
 &lt;p&gt;You can branch off each node into a new branch with the original node as the base for a new branch.&lt;/p&gt;
-&lt;p&gt;You can make a pull request to merge your code changes into the chain which adds a new node with a new commit hash.&lt;/p&gt;
+&lt;p&gt;You can make a pull request to merge your code changes into the chain which adds a new node with a new commit hash. Pull requests let you add code to a repository you don&amp;rsquo;t have write access to.&lt;/p&gt;
 &lt;h1 id=&#34;useful-commands&#34;&gt;Useful Commands&lt;/h1&gt;
 &lt;h2 id=&#34;gitignore&#34;&gt;Gitignore&lt;/h2&gt;
 &lt;p&gt;A gitignore lists files that git should, well, ignore. When adding and pushing these files will not be included.&lt;/p&gt;
@@ -81,6 +90,16 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After this, we might want to make a pull request and ask people to check our code in a review before we merge this to master/main.&lt;/p&gt;
+&lt;p&gt;When it comes to a commit itself, try to group relevant code together into one commit rather than squishing all your changes into one giant commit. That way, its easier to understand your history and revert more specific changes should there be any problems.&lt;/p&gt;
+&lt;p&gt;You can be really specific about what you&amp;rsquo;re staging with:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git add -p &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will show you the code and ask if you want to stage the hunk or not.&lt;/p&gt;
+&lt;p&gt;Finally, commit messages should clearly state what has been changed. Ideally should consist of a subject and body. Body has room for a much more detailed explaination where you can include answers for questions such as:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;What is the reason for the change?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s different than before?&lt;/li&gt;
+&lt;li&gt;Any potential gotchas/notes?&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;undoing-mistakes&#34;&gt;Undoing Mistakes&lt;/h2&gt;
 &lt;p&gt;Primarily, this is done with the reset command. The reset command moves HEAD which you can think of as the most recent node in the chain.&lt;/p&gt;
 &lt;p&gt;To see the log and thus the commit hashes:&lt;/p&gt;
@@ -90,6 +109,17 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Undo without discarding:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset &amp;lt;commit hash&amp;gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;branches&#34;&gt;Branches&lt;/h2&gt;
+&lt;h3 id=&#34;types-of-branch&#34;&gt;Types of Branch&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Long running - these are branches that stick around for the whole project lifecycle. Every project has a main/master. Integration branches, usually called develop/staging are also long life. Commits tend to not be directly added, they come through a merge or a rebase. This keeps your code quality and safe! You also may want to release code in batches or stages so controlling the flow of this branch requires pull requests.&lt;/li&gt;
+&lt;li&gt;Short lived - usually based from a long running branch that exists for a specific feature that will be deleted after the feature itself is merged into main.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;branching-strategy&#34;&gt;Branching strategy&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Github flow - there is one long running branch and multiple feature branches.&lt;/li&gt;
+&lt;li&gt;Gitflow - more structure, there are two long running branches, main and develop. there are mutiple short lived branches for features, releases and hotfixes. Release branches get merged back into main after testing, then you tag main with the relesase and close the release branch.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you&amp;rsquo;re working in a team, ask if there&amp;rsquo;s a pre-existing branching stratety.&lt;/p&gt;
 &lt;p&gt;To make a new branch:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git checkout -b &amp;lt;branch name&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To switch to the branch you just made:&lt;/p&gt;
@@ -111,6 +141,72 @@
 &lt;h2 id=&#34;forking&#34;&gt;Forking&lt;/h2&gt;
 &lt;p&gt;A fork is a copy of someone else&amp;rsquo;s repository that belongs to you that you can freely modify and make your own without being related to their original project. There is a dropdown menu.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo&#34;&gt;https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can use a fork to make your own changes to the original repository and then make a pull request to submit those changes to the original repository.&lt;/p&gt;
+&lt;h2 id=&#34;merging-and-rebasing&#34;&gt;Merging and Rebasing&lt;/h2&gt;
+&lt;h3 id=&#34;merge-conflicts&#34;&gt;Merge Conflicts&lt;/h3&gt;
+&lt;p&gt;Git usually can apply diffs without much trouble. However, sometimes there are contradictory changes that git cannot resolve on its own, so you&amp;rsquo;ll have to do it yourself.&lt;/p&gt;
+&lt;p&gt;Visual Studio Code has a good graphical tool for solving a merge conflict graphically. You can pick and choose between both files as to which changes you want to keep or throw.&lt;/p&gt;
+&lt;p&gt;To undo a merge or rebase that&amp;rsquo;s caused a conflict you can do:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git merge --abort
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git rebase --abort
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To fix using just git tools you can use:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git mergetool
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Mergetool Tutorial: &lt;a href=&#34;https://gist.github.com/karenyyng/f19ff75c60f18b4b8149&#34;&gt;https://gist.github.com/karenyyng/f19ff75c60f18b4b8149&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;rebase-vs-merge&#34;&gt;Rebase VS Merge&lt;/h3&gt;
+&lt;p&gt;Rebase keeps the project history flat and rewrites commit history. Merge preserves the original history and parent commits. With rebase, if the commit hasn&amp;rsquo;t been published yet then its okay to rewrite this history but if it&amp;rsquo;s already been pushed it could cause issues if someone has branched off from a commit that rebase has rewritten.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git rebase &amp;lt;branch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;interactive-rebase&#34;&gt;Interactive Rebase&lt;/h3&gt;
+&lt;p&gt;Same as above, don&amp;rsquo;t do this if you&amp;rsquo;ve published the commits.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git rebase -i
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;change-a-commits-message&#34;&gt;Change a commits message:&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git rebase -i &amp;lt;commit hash&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git rebase -i HEAD~&amp;lt;num of commits counting back from head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the next screen, change &amp;lsquo;pick&amp;rsquo; to &amp;lsquo;reword&amp;rsquo; on the commit you want to rename. Then save and quit and the next screen should let you change the commit message. Save and quit again.&lt;/p&gt;
+&lt;p&gt;As a side note, if the commit has not already been pushed you can do:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git commit --amend
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;squash-a-series-of-commits-into-one&#34;&gt;Squash a series of commits into one&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Go into rebase and keep your oldest commit as &amp;lsquo;pick&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;Change the rest to &amp;lsquo;squash&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;Save and close.&lt;/li&gt;
+&lt;li&gt;Write your message in the new window. Save and quit.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;using-submodules&#34;&gt;Using Submodules&lt;/h2&gt;
+&lt;p&gt;A submodule is a git repository of third party code within your git repository.&lt;/p&gt;
+&lt;p&gt;It is good practice to put submodules in a lib folder.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git submodule add &amp;lt;submodule url&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Parent git repository doesn&amp;rsquo;t store the files.&lt;/p&gt;
+&lt;h2 id=&#34;reflog&#34;&gt;Reflog&lt;/h2&gt;
+&lt;p&gt;We can use reflog to recover deleted commits.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reflog
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Git chronologically logs all important actions here.&lt;/p&gt;
+&lt;p&gt;Copy the commit hash of the commit before you deleted the items you wanted to recover&lt;/p&gt;
+&lt;p&gt;You can then do:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git reset &amp;lt;commit-hash&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or if you want to start a new branch:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git branch &amp;lt;name&amp;gt; &amp;lt;commit-hash&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can also restore a deleted branch using the above.&lt;/p&gt;
+&lt;h2 id=&#34;cherrypicking&#34;&gt;Cherrypicking&lt;/h2&gt;
+&lt;p&gt;Sometimes we want to apply one specific commit, to another branch:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git cherry-pick &amp;lt;commit-hash&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;then&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git cherry-pick f
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;search-and-find&#34;&gt;Search and Find&lt;/h2&gt;
+&lt;p&gt;Finding commits after a given date:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git log --after=&amp;#34;&amp;lt;2000-1-2&amp;gt;&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can also use before to find all commits before a given date:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git log --before&amp;lt;&amp;#34;2001-2-3&amp;#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Find commits from a specific person:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git log --author==&amp;#34;jane doe&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can combine these into one statement.&lt;/p&gt;
+&lt;p&gt;You can search for specific files:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git log -- &amp;lt;filename&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You will see a list of commits where this file was changed&lt;/p&gt;
+&lt;h2 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.git-tower.com/learn/git/advanced-git-kit/&#34;&gt;https://www.git-tower.com/learn/git/advanced-git-kit/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
 &lt;p&gt;Diagram Credit: &lt;a href=&#34;https://www.mermaidchart.com/&#34;&gt;https://www.mermaidchart.com/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -206,6 +302,15 @@
 &lt;p&gt;&lt;code&gt;    ~your code here~&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;\end{lstlisting}&lt;/code&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>How to Learn Go</title>
+      <link>http://localhost:1313/hugo-texify3/posts/learn-go/</link>
+      <pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/hugo-texify3/posts/learn-go/</guid>
+      <description></description>
     </item>
     
   </channel>

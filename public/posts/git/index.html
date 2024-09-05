@@ -70,7 +70,7 @@
   <meta itemprop="description" content="A basic explaination of version control and some useful commands (so I can find them easily!)">
   <meta itemprop="datePublished" content="2024-08-25T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-25T21:01:34+01:00">
-  <meta itemprop="wordCount" content="539">
+  <meta itemprop="wordCount" content="1359">
   <meta itemprop="keywords" content="Git,Version Control">
 
   
@@ -172,7 +172,7 @@
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          539 words
+          1359 words
         </span>
       
       
@@ -185,7 +185,7 @@
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          ~3 mins
+          ~7 mins
         </span>
       
     </div>
@@ -212,11 +212,29 @@
     <li><a href="#gitignore">Gitignore</a></li>
     <li><a href="#making-a-commit-and-pushing">Making a Commit and Pushing</a></li>
     <li><a href="#undoing-mistakes">Undoing Mistakes</a></li>
-    <li><a href="#branches">Branches</a></li>
+    <li><a href="#branches">Branches</a>
+      <ul>
+        <li><a href="#types-of-branch">Types of Branch</a></li>
+        <li><a href="#branching-strategy">Branching strategy</a></li>
+      </ul>
+    </li>
     <li><a href="#patching">Patching</a></li>
     <li><a href="#remote-branches">Remote Branches</a></li>
     <li><a href="#github-actions">Github Actions</a></li>
     <li><a href="#forking">Forking</a></li>
+    <li><a href="#merging-and-rebasing">Merging and Rebasing</a>
+      <ul>
+        <li><a href="#merge-conflicts">Merge Conflicts</a></li>
+        <li><a href="#rebase-vs-merge">Rebase VS Merge</a></li>
+        <li><a href="#interactive-rebase">Interactive Rebase</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-submodules">Using Submodules</a></li>
+    <li><a href="#reflog">Reflog</a></li>
+    <li><a href="#cherrypicking">Cherrypicking</a></li>
+    <li><a href="#search-and-find">Search and Find</a></li>
+    <li><a href="#further-reading">Further Reading</a></li>
+    <li><a href="#credits">Credits</a></li>
   </ul>
 </nav></div>
   </details>
@@ -242,7 +260,7 @@
 
 <p>You can think of git history like a chain, with each node on the chain being its own commit (with an individual commit hash for the purposes of identification).</p>
 <p>You can branch off each node into a new branch with the original node as the base for a new branch.</p>
-<p>You can make a pull request to merge your code changes into the chain which adds a new node with a new commit hash.</p>
+<p>You can make a pull request to merge your code changes into the chain which adds a new node with a new commit hash. Pull requests let you add code to a repository you don&rsquo;t have write access to.</p>
 <h1 id="useful-commands">Useful Commands</h1>
 <h2 id="gitignore">Gitignore</h2>
 <p>A gitignore lists files that git should, well, ignore. When adding and pushing these files will not be included.</p>
@@ -262,6 +280,16 @@
 </code></pre><p>or</p>
 <pre tabindex="0"><code>git push &lt;remote&gt; &lt;branch&gt;
 </code></pre><p>After this, we might want to make a pull request and ask people to check our code in a review before we merge this to master/main.</p>
+<p>When it comes to a commit itself, try to group relevant code together into one commit rather than squishing all your changes into one giant commit. That way, its easier to understand your history and revert more specific changes should there be any problems.</p>
+<p>You can be really specific about what you&rsquo;re staging with:</p>
+<pre tabindex="0"><code>git add -p &lt;file&gt;
+</code></pre><p>This will show you the code and ask if you want to stage the hunk or not.</p>
+<p>Finally, commit messages should clearly state what has been changed. Ideally should consist of a subject and body. Body has room for a much more detailed explaination where you can include answers for questions such as:</p>
+<ol>
+<li>What is the reason for the change?</li>
+<li>What&rsquo;s different than before?</li>
+<li>Any potential gotchas/notes?</li>
+</ol>
 <h2 id="undoing-mistakes">Undoing Mistakes</h2>
 <p>Primarily, this is done with the reset command. The reset command moves HEAD which you can think of as the most recent node in the chain.</p>
 <p>To see the log and thus the commit hashes:</p>
@@ -271,6 +299,17 @@
 </code></pre><p>Undo without discarding:</p>
 <pre tabindex="0"><code>git reset &lt;commit hash&gt; 
 </code></pre><h2 id="branches">Branches</h2>
+<h3 id="types-of-branch">Types of Branch</h3>
+<ol>
+<li>Long running - these are branches that stick around for the whole project lifecycle. Every project has a main/master. Integration branches, usually called develop/staging are also long life. Commits tend to not be directly added, they come through a merge or a rebase. This keeps your code quality and safe! You also may want to release code in batches or stages so controlling the flow of this branch requires pull requests.</li>
+<li>Short lived - usually based from a long running branch that exists for a specific feature that will be deleted after the feature itself is merged into main.</li>
+</ol>
+<h3 id="branching-strategy">Branching strategy</h3>
+<ol>
+<li>Github flow - there is one long running branch and multiple feature branches.</li>
+<li>Gitflow - more structure, there are two long running branches, main and develop. there are mutiple short lived branches for features, releases and hotfixes. Release branches get merged back into main after testing, then you tag main with the relesase and close the release branch.</li>
+</ol>
+<p>If you&rsquo;re working in a team, ask if there&rsquo;s a pre-existing branching stratety.</p>
 <p>To make a new branch:</p>
 <pre tabindex="0"><code>git checkout -b &lt;branch name&gt;
 </code></pre><p>To switch to the branch you just made:</p>
@@ -292,6 +331,72 @@
 <h2 id="forking">Forking</h2>
 <p>A fork is a copy of someone else&rsquo;s repository that belongs to you that you can freely modify and make your own without being related to their original project. There is a dropdown menu.</p>
 <p><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo">https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo</a></p>
+<p>You can use a fork to make your own changes to the original repository and then make a pull request to submit those changes to the original repository.</p>
+<h2 id="merging-and-rebasing">Merging and Rebasing</h2>
+<h3 id="merge-conflicts">Merge Conflicts</h3>
+<p>Git usually can apply diffs without much trouble. However, sometimes there are contradictory changes that git cannot resolve on its own, so you&rsquo;ll have to do it yourself.</p>
+<p>Visual Studio Code has a good graphical tool for solving a merge conflict graphically. You can pick and choose between both files as to which changes you want to keep or throw.</p>
+<p>To undo a merge or rebase that&rsquo;s caused a conflict you can do:</p>
+<pre tabindex="0"><code>git merge --abort
+</code></pre><p>or</p>
+<pre tabindex="0"><code>git rebase --abort
+</code></pre><p>To fix using just git tools you can use:</p>
+<pre tabindex="0"><code>git mergetool
+</code></pre><p>Mergetool Tutorial: <a href="https://gist.github.com/karenyyng/f19ff75c60f18b4b8149">https://gist.github.com/karenyyng/f19ff75c60f18b4b8149</a></p>
+<h3 id="rebase-vs-merge">Rebase VS Merge</h3>
+<p>Rebase keeps the project history flat and rewrites commit history. Merge preserves the original history and parent commits. With rebase, if the commit hasn&rsquo;t been published yet then its okay to rewrite this history but if it&rsquo;s already been pushed it could cause issues if someone has branched off from a commit that rebase has rewritten.</p>
+<pre tabindex="0"><code>git rebase &lt;branch&gt;
+</code></pre><h3 id="interactive-rebase">Interactive Rebase</h3>
+<p>Same as above, don&rsquo;t do this if you&rsquo;ve published the commits.</p>
+<pre tabindex="0"><code>git rebase -i
+</code></pre><h4 id="change-a-commits-message">Change a commits message:</h4>
+<pre tabindex="0"><code>git rebase -i &lt;commit hash&gt;
+</code></pre><p>or</p>
+<pre tabindex="0"><code>git rebase -i HEAD~&lt;num of commits counting back from head&gt;
+</code></pre><p>In the next screen, change &lsquo;pick&rsquo; to &lsquo;reword&rsquo; on the commit you want to rename. Then save and quit and the next screen should let you change the commit message. Save and quit again.</p>
+<p>As a side note, if the commit has not already been pushed you can do:</p>
+<pre tabindex="0"><code>git commit --amend
+</code></pre><h4 id="squash-a-series-of-commits-into-one">Squash a series of commits into one</h4>
+<ol>
+<li>Go into rebase and keep your oldest commit as &lsquo;pick&rsquo;.</li>
+<li>Change the rest to &lsquo;squash&rsquo;.</li>
+<li>Save and close.</li>
+<li>Write your message in the new window. Save and quit.</li>
+</ol>
+<h2 id="using-submodules">Using Submodules</h2>
+<p>A submodule is a git repository of third party code within your git repository.</p>
+<p>It is good practice to put submodules in a lib folder.</p>
+<pre tabindex="0"><code>git submodule add &lt;submodule url&gt;
+</code></pre><p>Parent git repository doesn&rsquo;t store the files.</p>
+<h2 id="reflog">Reflog</h2>
+<p>We can use reflog to recover deleted commits.</p>
+<pre tabindex="0"><code>git reflog
+</code></pre><p>Git chronologically logs all important actions here.</p>
+<p>Copy the commit hash of the commit before you deleted the items you wanted to recover</p>
+<p>You can then do:</p>
+<pre tabindex="0"><code>git reset &lt;commit-hash&gt;
+</code></pre><p>or if you want to start a new branch:</p>
+<pre tabindex="0"><code>git branch &lt;name&gt; &lt;commit-hash&gt;
+</code></pre><p>You can also restore a deleted branch using the above.</p>
+<h2 id="cherrypicking">Cherrypicking</h2>
+<p>Sometimes we want to apply one specific commit, to another branch:</p>
+<pre tabindex="0"><code>git cherry-pick &lt;commit-hash&gt; 
+</code></pre><p>then</p>
+<pre tabindex="0"><code>git cherry-pick f
+</code></pre><h2 id="search-and-find">Search and Find</h2>
+<p>Finding commits after a given date:</p>
+<pre tabindex="0"><code>git log --after=&#34;&lt;2000-1-2&gt;&#34;
+</code></pre><p>You can also use before to find all commits before a given date:</p>
+<pre tabindex="0"><code>git log --before&lt;&#34;2001-2-3&#34;&gt;
+</code></pre><p>Find commits from a specific person:</p>
+<pre tabindex="0"><code>git log --author==&#34;jane doe&#34;
+</code></pre><p>You can combine these into one statement.</p>
+<p>You can search for specific files:</p>
+<pre tabindex="0"><code>git log -- &lt;filename&gt;
+</code></pre><p>You will see a list of commits where this file was changed</p>
+<h2 id="further-reading">Further Reading</h2>
+<p><a href="https://www.git-tower.com/learn/git/advanced-git-kit/">https://www.git-tower.com/learn/git/advanced-git-kit/</a></p>
+<h2 id="credits">Credits</h2>
 <p>Diagram Credit: <a href="https://www.mermaidchart.com/">https://www.mermaidchart.com/</a></p>
 
     

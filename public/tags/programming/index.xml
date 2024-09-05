@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Sacha&#39;s Website</title>
+    <link>http://localhost:1313/hugo-texify3/tags/programming/</link>
+    <description>Recent content in Programming on Sacha&#39;s Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 10 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/hugo-texify3/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Learn Go</title>
+      <link>http://localhost:1313/hugo-texify3/posts/learn-go/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/hugo-texify3/posts/learn-go/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
