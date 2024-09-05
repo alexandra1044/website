@@ -70,6 +70,7 @@
   <meta itemprop="description" content="How to Run Github Actions">
   <meta itemprop="datePublished" content="2024-09-05T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-09-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="345">
   <meta itemprop="keywords" content="Github Actions,Yaml">
 
   
@@ -171,7 +172,7 @@
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          0 words
+          345 words
         </span>
       
       
@@ -184,7 +185,7 @@
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          ~0 min
+          ~2 mins
         </span>
       
     </div>
@@ -202,10 +203,69 @@
   
   
   
+  <details>
+    <summary>
+      <b>Table of Contents</b>
+    </summary>
+    <div class="toc numbered-subtitles"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#templates">Templates</a></li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#syntax">Syntax</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
   
   <article class="content numbered-subtitles">
     
-    
+    <h1 id="what-are-github-actions">What are Github Actions?</h1>
+<p>CI/CD means continuous integration and continuous delivery/deployment. You can easily add this to your own projects with Github Actions.</p>
+<p>A github action triggers when an event occurs, for example someone makes a pull request or pushes code.</p>
+<p>If you&rsquo;re working alone, Github&rsquo;s free tier is most likely sufficient for your needs, but so as to not waste those precious compute seconds, you can pre-run your github action files locally to check they work using act: <a href="https://github.com/nektos/act">https://github.com/nektos/act</a> (you also need docker for this).</p>
+<p>Can be triggered with Github CLI.</p>
+<h1 id="what-sort-of-things-can-i-use-it-for">What sort of things can I use it for?</h1>
+<p>With Github Actions you can:</p>
+<ol>
+<li>Run tests when code is pushed or a pull request is made</li>
+<li>Run a build of the code to check for errors</li>
+<li>Run a deployment of new code</li>
+<li>Generate reports</li>
+<li>Linting</li>
+<li>Mark &amp; label issues</li>
+<li>Reproduce an issue and mark it as reproducible or not</li>
+</ol>
+<h1 id="how-to-add-github-actions-to-your-project">How to add Github Actions to your Project</h1>
+<h2 id="templates">Templates</h2>
+<p>There are a number of template files available so that you don&rsquo;t need to write the actions yourself. These are typically based on common workflows.</p>
+<p><a href="https://github.com/actions/starter-workflows">https://github.com/actions/starter-workflows</a></p>
+<p>Also check out <a href="https://github.com/sdras/awesome-actions">https://github.com/sdras/awesome-actions</a> for other pre-written actions.</p>
+<h2 id="setup">Setup</h2>
+<p>You&rsquo;ll need to add your new workflow file to the path below:</p>
+<pre tabindex="0"><code>.github/workflows/&lt;name.yaml&gt;
+</code></pre><p>See these example workflows: <a href="https://github.com/actions/">https://github.com/actions/</a></p>
+<h2 id="syntax">Syntax</h2>
+<p>Let&rsquo;s take a look at this example issue from the link below:</p>
+<pre tabindex="0"><code>name: Issue assignment &lt;--- All actions need a name
+
+on:
+    issues:
+        types: [opened] &lt;--- Specifies what type of issue we want to run on
+
+jobs:
+    auto-assign: &lt;--- Specify that the job is an auto assignment
+        runs-on: ubuntu-latest &lt;--- What OS we&#39;re running on
+        steps:
+            - name: &#39;Auto-assign issue&#39; &lt;--- Must name individual steps
+              uses: pozil/auto-assign-issue@v1.11.0 &lt;--- The code we&#39;re using for this action
+              with:
+                  assignees: phantsure,tiwarishub,anuragc617,vsvipul,bishal-pdmsft 
+                  numOfAssignee: 1
+</code></pre><p>Most workflows are extremley human-readable. The best way to understand the syntax is to step few a through like this.</p>
+<p>The best document to read for syntax: <a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions">https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions</a></p>
+<p>This repository contains the above workflow and most listed above: <a href="https://github.com/actions/starter-workflows/tree/main/.github/workflows">https://github.com/actions/starter-workflows/tree/main/.github/workflows</a></p>
+<p>You can make some cool stuff with Github actions, like this site!</p>
+
     
   </article>
 
